@@ -484,7 +484,7 @@ const ROUTES_RAW = [
   {from:'长沙',to:'昆明',type:'高铁',dur:4,price:388,comfort:7,dep:'07:30',arr:'11:30',code:'G1681'},
   {from:'重庆',to:'广州',type:'飞机',dur:2,price:480,comfort:7,dep:'10:00',arr:'12:00',code:'CA435'},
   {from:'南京',to:'广州',type:'飞机',dur:2.5,price:580,comfort:7,dep:'09:30',arr:'12:00',code:'CA1827'},
-  {from:'昆明',to:'深圳',type:'飞机',dur:2.5,price:520,comfort:7,dep:'10:30',arr:'13:00',code:'CA775'},
+  {from:'昆明',to:'深圳',type:'飞机',dur:2.5,price:520,comfort:7,dep:'10:30',arr:'13:00',code:'CA775'},,{from:'苏州',to:'上海',type:'高铁',dur:0.5,price:39,comfort:9},{from:'上海',to:'苏州',type:'高铁',dur:0.5,price:39,comfort:9},{from:'苏州',to:'南京',type:'高铁',dur:1,price:100,comfort:9},{from:'苏州',to:'杭州',type:'高铁',dur:1.5,price:75,comfort:8},{from:'厦门',to:'深圳',type:'高铁',dur:3.5,price:175,comfort:7},{from:'厦门',to:'广州',type:'高铁',dur:3,price:200,comfort:7},{from:'厦门',to:'上海',type:'飞机',dur:2,price:500,comfort:7},{from:'青岛',to:'北京',type:'高铁',dur:3,price:314,comfort:8},{from:'青岛',to:'上海',type:'飞机',dur:1.5,price:450,comfort:7},{from:'青岛',to:'南京',type:'高铁',dur:3.5,price:260,comfort:8},{from:'三亚',to:'广州',type:'飞机',dur:1.5,price:350,comfort:8},{from:'三亚',to:'深圳',type:'飞机',dur:1.5,price:400,comfort:8},{from:'三亚',to:'成都',type:'飞机',dur:2.5,price:550,comfort:7},{from:'桂林',to:'广州',type:'高铁',dur:2.5,price:213,comfort:8},{from:'桂林',to:'长沙',type:'高铁',dur:3,price:195,comfort:7},{from:'丽江',to:'昆明',type:'高铁',dur:3,price:200,comfort:8},{from:'丽江',to:'成都',type:'飞机',dur:1.5,price:400,comfort:8},{from:'丽江',to:'大理',type:'高铁',dur:2,price:80,comfort:8},{from:'哈尔滨',to:'北京',type:'高铁',dur:5,price:542,comfort:7},{from:'南京',to:'苏州',type:'高铁',dur:1,price:100,comfort:9},{from:'杭州',to:'苏州',type:'高铁',dur:1.5,price:75,comfort:8},{from:'深圳',to:'厦门',type:'高铁',dur:3.5,price:175,comfort:7},{from:'广州',to:'厦门',type:'高铁',dur:3,price:200,comfort:7},{from:'上海',to:'厦门',type:'飞机',dur:2,price:500,comfort:7},{from:'北京',to:'青岛',type:'高铁',dur:3,price:314,comfort:8},{from:'上海',to:'青岛',type:'飞机',dur:1.5,price:450,comfort:7},{from:'南京',to:'青岛',type:'高铁',dur:3.5,price:260,comfort:8},{from:'广州',to:'三亚',type:'飞机',dur:1.5,price:350,comfort:8},{from:'深圳',to:'三亚',type:'飞机',dur:1.5,price:400,comfort:8},{from:'成都',to:'三亚',type:'飞机',dur:2.5,price:550,comfort:7},{from:'广州',to:'桂林',type:'高铁',dur:2.5,price:213,comfort:8},{from:'长沙',to:'桂林',type:'高铁',dur:3,price:195,comfort:7},{from:'昆明',to:'丽江',type:'高铁',dur:3,price:200,comfort:8},{from:'成都',to:'丽江',type:'飞机',dur:1.5,price:400,comfort:8},{from:'大理',to:'丽江',type:'高铁',dur:2,price:80,comfort:8},{from:'北京',to:'哈尔滨',type:'高铁',dur:5,price:542,comfort:7},{from:'哈尔滨',to:'北京',type:'飞机',dur:2,price:680,comfort:7},{from:'北京',to:'哈尔滨',type:'飞机',dur:2,price:680,comfort:7},{from:'洛阳',to:'西安',type:'高铁',dur:1.5,price:185,comfort:9},{from:'西安',to:'洛阳',type:'高铁',dur:1.5,price:185,comfort:9},{from:'洛阳',to:'北京',type:'高铁',dur:3.5,price:430,comfort:8},{from:'北京',to:'洛阳',type:'高铁',dur:3.5,price:430,comfort:8}
 ];
 
 const ROUTE_INDEX = {};
@@ -778,7 +778,119 @@ function showPlanDetail(plan,idx) {
   var modal=document.getElementById('detailModal');
   var body=document.getElementById('detailBody');
   var color=ROUTE_COLORS[idx%ROUTE_COLORS.length];
-  var icons={'高铁':'🚄','飞机':'✈️'};
+  var icons={'高铁':'🚄','飞机':'✈️,
+  '苏州': {
+    intro: '江南水乡的代表城市，精致园林的故乡。',
+    days: '2-3天',
+    budget: '人均约2000-4000元',
+    transport: '地铁+公交覆盖全城；园林之间建议打车',
+    itinerary: 'Day1: 卓政园→狮子林→苏州博物馆→平江路|Day2: 虎丘→寒山寺→山塘街→金鸡湖|Day3: 周庄水乡→同里古镇',
+    booking: ['卓政园|虎丘|周庄'],
+    photoTips: '卓政园四季都美。平江路夜景很美。',
+    hotels: ['观前街（景区）','平江路（古城）'],
+    food: ['松鹤楼苏州菜','哭喀嗯甜眼'],
+    bestSeason: '3-5月,9-11月',
+    tips: '卓政园早上去人少。周庄建议平日。',
+    nearby: ['上海(高铁30分)','杭州(高铁1h)']
+  },
+  '厦门': {
+    intro: '海滨旅游城市，鼓浪屻欧式建筑与海边风光交相辉映。',
+    days: '3-4天',
+    budget: '人均约2500-5000元',
+    transport: '地铁覆盖所有景点；BTR快速公交很方便',
+    itinerary: 'Day1: 鼓浪屻→中山路→星海公园布行道|Day2: 厦大校园→南普陀寺→涙鄂霰尾|Day3: 土楼文化村（海深+98叠）|Day4: 匙申路→栖真桥→千翹园',
+    booking: ['鼓浪屻渡轮|土楼文化村|匙申园林'],
+    photoTips: '厦大校园蓝天白云很出片。鼓浪屻峰顶拍全景。土楼文化村前看日落最美。',
+    hotels: ['中山路/厦大（市中心）','鼓浪屻（海岛高尔夫）'],
+    food: ['障蕾馨苍涙面','街头尾灯厦门菜','山大盲抽米线胡'],
+    bestSeason: '10-12月,3-5月',
+    tips: '鼓浪屻周末人特别多，建议平日。厦大可以进去参观。土楼看一个就行。',
+    nearby: ['福州(高铁1.5h)','漳州(高铁20min)']
+  },
+  '青岛': {
+    intro: '海滨度假胜地，德国建筑与现代海滨风光融合。',
+    days: '3-4天',
+    budget: '人均约2500-5000元',
+    transport: '地铁覆盖所有景点；海滨带建议骑行或步行',
+    itinerary: 'Day1: 崺山→第一海滨沐场→中山路|Day2: 八大关→小鱼山公园→崺山夜景|Day3: 青岛啤酒博物馆→嵯山海滨|Day4: 八大关→青岛海底世界',
+    booking: ['崺山|青岛海底世界|嵯山'],
+    photoTips: '八大关的色彩建筑暮拍最美。小鱼山拍崺山全景。青岛啤酒街夜景很有氛围。',
+    hotels: ['崺山/第一海滨（海景）','中山路/市中心'],
+    food: ['舒屁座海鲜火锅','站着吃得睡不着啤酒厅'],
+    bestSeason: '5-10月，夏季海滨时节',
+    tips: '崺山早上登山。八大关是青岛最出片的地方。青岛啤酒街熟炊很好喝。',
+    nearby: ['济南(高铁1.5h)','威海(高铁1h)']
+  },
+  '三亚': {
+    intro: '中国最美的海滩，热带海岛度假胜地，天海一色的海滨风光。',
+    days: '4-5天',
+    budget: '人均约3000-8000元',
+    transport: '地铁覆盖海滨带；打车起步10元，海滨带建议出租车',
+    itinerary: 'Day1: 亚龙湾→天涯海角→南山文化旅游区|Day2: 蜈尼刹门→聚贪班来→啷嘛崙岛|Day3: 涚湾→大东海滨海沐场|Day4: 东屻岛→唱歌山顶公园',
+    booking: ['亚龙湾|蜈尼刹门|天涯海角|南山'],
+    photoTips: '亚龙湾日落是三亚最美的景观。天涯海角早晨拍最美。涚湾晚暗照很美。',
+    hotels: ['亚龙湾（海滨、贵）','天涯区（便宜）','涚湾（度假区）'],
+    food: ['聚贪班来海鲜火锅','啷嘛崙岛海鲜家厨','大东海海鲜市场'],
+    bestSeason: '10-4月，避开6-9月台风季',
+    tips: '亚龙湾海滨最美但住宿最贵。天涯海角区便宜且多小吃。建议自己开车或包车游。',
+    nearby: ['海口(高铁1h)','嵛州(船2h)']
+  },
+  '桂林': {
+    intro: '“桂林山水甲天下”，卡斯特岩溶山水风光的代表。',
+    days: '3-4天',
+    budget: '人均约2000-4000元',
+    transport: '公交+打车覆盖市区；向公海→阳朔建议坐渡船或自驾',
+    itinerary: 'Day1: 向公海→十里画廊→奇峰镇|Day2: 上庯度假区→阳朔西街→零里赛游中心|Day3: 一周古街→奇峰园林→零里古镇',
+    booking: ['向公海|一周古街|奇峰园林'],
+    photoTips: '向公海扁船是经典拍摄点。阳朔西街晚上灯光很美。十里画廊渡船拍照极其出片。',
+    hotels: ['向公海（景区）','阳朔西街（文艺）','市中心（交通便利）'],
+    food: ['桂林米粉（老松肉米粉）','阳朔礟豆饼，玉隆训渡，阳朔西街熟炊'],
+    bestSeason: '4-10月，以秋季最佳',
+    tips: '桂林米粉就是当地人的早餐，不用去网红店。向公海渡船最后一班4点半，别错过。⠉',
+    nearby: ['阳朔(渡1h)','龙胜(也补提高铁，正在修)']
+  },
+  '丽江': {
+    intro: '古老的纳西文化之城，世界文化遗产，雪山与古城的完美结合。',
+    days: '3-5天',
+    budget: '人均约2000-4500元',
+    transport: '公交覆盖古城和周边景点；古城内建议步行或骑行',
+    itinerary: 'Day1: 大研古城→黑龙潮→木府|Day2: 玉龙雪山→蓝月谷→斑鹤晋宾馆|Day3: 拉市海→芆河→条条街|Day4: 沙溪古镇→白沙古镇',
+    booking: ['玉龙雪山|拉市海|大研古城维护费'],
+    photoTips: '玉龙雪山的日出是绝景。拉市海的水霜晚暗照很美。大研古城晚上灯光灯影很美。',
+    hotels: ['大研古城内（古城高尔夫）','古城外围（便宜）'],
+    food: ['朋友家公娩鱼，梧桐就去吧，白杏之家纳西火锅'],
+    bestSeason: '3-5月春季，9-11月秋季，雪山景色最美',
+    tips: '玉龙雪山需提前预定门票，难买。古城酉江缴纳税80元。拉市海建议体息足够的时间。',
+    nearby: ['大理(高铁2h)','香格里拉(英文名Shangers汽车4h)']
+  },
+  '哈尔滨': {
+    intro: '冰雪之都，东北旅游核心，冰雕和雪建筑闻名。'
+    days: '3-4天'
+    budget: '人均约2000-4500元'
+    transport: '地铁覆盖主要景点；冬季建议地铁+打车'
+    itinerary: 'Day1: 大食等偶像街→教堂→央大街|Day2: 冰雪大世界→太阳岛|Day3: 松花江→东北虎林园|Day4: 保皇寺→哈尔滨博物馆'
+    booking: ['冰雪大世界','太阳岛']
+    photoTips: '冰雪大世界夜景比白天美多了，冰刻在灯光下彩色漂亮。央大街欧式建筑在雪中很美。'
+    hotels: ['央大街（市中心）','太阳岛（温泉）']
+    food: ['华梅居铁锅燖','张包包府特制火锅']
+    bestSeason: '12-2月冰雪节，夏季避暑'
+    tips: '冬季带足防寒装备，温度可降至-30℃。冰雪大世界最后入场21:30。'
+    nearby: ['长春(高铁1h)','大连(高铁4h)']
+  },
+  '洛阳': {
+    intro: '九朝古都，龙门石窟和白马寺所在地，丰富的历史遗产城市。'
+    days: '2-3天'
+    budget: '人均约1500-3000元'
+    transport: '地铁覆盖；龙门石窟建议公交或打车'
+    itinerary: 'Day1: 龙门石窟→关林→白马寺|Day2: 天津晓笼→洛阳博物馆→洛阳古城|Day3: 白马寺→龙门石窟二游（细看）'
+    booking: ['龙门石窟','白马寺','关林']
+    photoTips: '龙门石窟夕阳时分拍照最绝。白马寺古建筑在蓝天下很出片。'
+    hotels: ['西工区(市中心)','洛阳大学附近(便宜)']
+    food: ['洛阳水席','洛阳不糖','核桃襤']
+    bestSeason: '4-5月,9-10月，春秋最佳'
+    tips: '龙门石窟周围交通圈大，建议早上去。白马寺小但精致，值得去。附近小吃很多。'
+    nearby: ['开封(高铁40分)','郑州(高铁0.5h)']
+  }'};
   var dots=['green','blue','amber','green','blue'];
   var timeline='';
   plan.segments.forEach(function(seg,i){
@@ -858,7 +970,7 @@ document.getElementById('dateInput').value=tomorrow.toISOString().slice(0,10);
 
 // Show city markers on initial load
 var initBounds=L.latLngBounds([]);
-var popCities=['北京','上海','广州','成都','杭州','西安','武汉'];
+var popCities=['北京','上海','广州','成都','杭州','西安','武汉','洛阳','哈尔滨','丽江','桂林','三亚','青岛','厦门','苏州'];
 popCities.forEach(function(name){
   var coord=CITY_COORDS[name];if(!coord)return;
   var w=name.length*14+16;
